@@ -4,7 +4,7 @@ class Auto:
 
 class Auto:
     def __init__(self,cantRueda,color):
-        self.cantRueda=cantRueda
+        self._cantRueda=cantRueda
         self.color=color
       
        
@@ -21,5 +21,5 @@ class Auto:
 
 coche1= Auto("4 ruedas" ,"negro")  
 
-print(coche1.cantRueda) 
+print(coche1._cantRueda) 
 coche1.encendido()
