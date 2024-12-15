@@ -1,33 +1,39 @@
 import sqlite3
-import sqlite3
-from prueba import Auto 
-def conectar():
-    conexion = sqlite3.connect("test.db")
-    return conexion
 
-#def cargar_materias():
-    try:
-        cone = conectar()
-        cur = cone.cursor()
-        sql = "SELECT id,nombre from materias;"
-        cur.execute(sql)
-        resultado = cur.fetchall()
-        print(resultado)
-        resultado2 = []
-        for r in resultado:
-            resultado2.append({"id": r[0], "nombre": r[1]})
-        return resultado2
-    finally:
-        cone.close()
+def crear_tabla_personas():
 
-#print(cargar_materias())
-coche=Auto("4ruedas","rojo")
-print (coche.color)
+     conexion = sqlite3.connect("miBaseDatos.db")
 
-for x in range(10):
-    print(x)
+     cursor = conexion.cursor()
+ 
+     cursor.execute('''CREATE TABLE IF NOT EXISTS Personas (
 
-compras=["caius","pelo","perro","cato"]
+     nombre TEXT, edad INTEGER, ciudad TEXT) ''')
 
-for x in compras:
-    print(x)
+     conexion.commit()
+
+     conexion.close()
+def insertar():
+     conexion = sqlite3.connect("miBaseDatos.db")
+
+     cursor = conexion.cursor()
+ 
+    # Insertar un nuevo registro en la tabla Personas
+
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES ('Carlos',27, 'Tucumán')")
+     
+     
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Esteban', 32, 'Mar del Plata')")
+
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Valeria', 27, 'Bahía Blanca')")
+
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Fernando', 41, 'Rosario')")
+
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Carolina', 29, 'La Plata')")
+
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Juan', 35, 'Córdoba')")
+     conexion.commit()
+
+     conexion.close()
+crear_tabla_personas()
+insertar()
