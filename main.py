@@ -31,7 +31,9 @@ def insertar():
 
      cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Carolina', 29, 'La Plata')")
 
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Juan', 35, 'Córdoba')")
+     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Juan', 35,'')")
+     
+     cursor.execute("UPDATE Personas SET ciudad='JUJUY' WHERE nombre='Juan' ")
      conexion.commit()
 
      conexion.close()
