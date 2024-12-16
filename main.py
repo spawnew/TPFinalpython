@@ -1,20 +1,9 @@
-import sqlite3
+
 import insertar 
 import actualizar
-def crearProductos():
+import crearProductos
 
-     conexion = sqlite3.connect("miBaseDatos.db")
-
-     cursor = conexion.cursor()
- 
-     cursor.execute('''CREATE TABLE IF NOT EXISTS Productos (
-
-     nombre TEXT,descripcion TEXT, cantidadDisponible INTEGER, precio INTEGER,categoria TEXT) ''')
-
-     conexion.commit()
-
-     conexion.close()
-crearProductos()
+crearProductos.crearBase()
 activo=True
 
 while activo:
@@ -23,12 +12,14 @@ while activo:
     if menu==1:
        insertar.insertar()
     elif menu==2:
+        print("boton 2")
     elif menu==3:
         print("bienvenido al menu de actualizacion ingrese producto y cantidad ")
         producto=input("ingrese el producto que desee actuarlizar ")
         cantidad=int(input("ingrese la cantidad que desea actualizar " ))
         actualizar.actualizar(producto,cantidad)
-  
+    elif menu==2:
+        print("boton 2")
     elif menu==7:
             activo=False
                        
