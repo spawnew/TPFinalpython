@@ -1,5 +1,6 @@
 Tp final del curso python  Talent Tech del gobierno de bs as en el mismo se vio  Manejo de funciones importar funciones manejos de bucles repeticicion tuplas diccionarios if else base de datos 
-Consignas del tp
+Consignas del tp:
+
 Registro de productos: Ingresar nuevos productos al inventario, solicitando nombre, descripción,
 cantidad disponible, precio y categoría.
 
