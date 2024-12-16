@@ -3,11 +3,11 @@ def insertar():
      conexion = sqlite3.connect("miBaseDatos.db")
 
      cursor = conexion.cursor()
-     nombre=input("nombre para agregar a la base de dato ")
-     descripcion=input("descripcion para agregar a la base de dato ")
+     nombre=input("nombre para agregar a la base de dato ").strip().lower()
+     descripcion=input("descripcion para agregar a la base de dato ").strip().lower()
      cantidad=int(input("cantidad disponible para agregar a la base de dato "))
      precio=int(input("precio para agregar a la base de dato "))
-     categoria=input("categoria para agregar a la base de dato ")
+     categoria=input("categoria para agregar a la base de dato ").strip().lower()
    
    
    

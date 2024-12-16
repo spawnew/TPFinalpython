@@ -12,8 +12,8 @@ def listarCompleto():
          print("Nombre:",producto[0],
                "Descripcion",producto[1],
                "CantidadDisponible:",producto[2],
-               "PRECIO:",producto[3] 
-                "PRECIO:",producto[3]
+               "Precio:",producto[3] ,
+                "Categoria:",producto[4]
                )
     
      
