@@ -1,41 +1,37 @@
 import sqlite3
-
-def crear_tabla_personas():
+import insertar 
+import actualizar
+def crearProductos():
 
      conexion = sqlite3.connect("miBaseDatos.db")
 
      cursor = conexion.cursor()
  
-     cursor.execute('''CREATE TABLE IF NOT EXISTS Personas (
+     cursor.execute('''CREATE TABLE IF NOT EXISTS Productos (
 
-     nombre TEXT, edad INTEGER, ciudad TEXT) ''')
+     nombre TEXT,descripcion TEXT, cantidadDisponible INTEGER, precio INTEGER,categoria TEXT) ''')
 
      conexion.commit()
 
      conexion.close()
-def insertar():
-     conexion = sqlite3.connect("miBaseDatos.db")
+crearProductos()
+activo=True
 
-     cursor = conexion.cursor()
- 
-    # Insertar un nuevo registro en la tabla Personas
+while activo:
+    print("Bienvenido a la tienda Imperioyugioh")
+    menu=int(input("ingrese 1-para agregar un producto 2-consultar productos  3-para actualizar 4-eliminar productos 5-mostar productos 6-reporte de bajo stock 7-salir"))
+    if menu==1:
+       insertar.insertar()
+    elif menu==2:
+    elif menu==3:
+        print("bienvenido al menu de actualizacion ingrese producto y cantidad ")
+        producto=input("ingrese el producto que desee actuarlizar ")
+        cantidad=int(input("ingrese la cantidad que desea actualizar " ))
+        actualizar.actualizar(producto,cantidad)
+  
+    elif menu==7:
+            activo=False
+                       
 
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES ('Carlos',27, 'Tucumán')")
-     
-     
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Esteban', 32, 'Mar del Plata')")
 
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Valeria', 27, 'Bahía Blanca')")
 
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Fernando', 41, 'Rosario')")
-
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Carolina', 29, 'La Plata')")
-
-     cursor.execute("INSERT INTO Personas (nombre, edad, ciudad) VALUES('Juan', 35,'')")
-     
-     cursor.execute("UPDATE Personas SET ciudad='JUJUY' WHERE nombre='Juan' ")
-     conexion.commit()
-
-     conexion.close()
-crear_tabla_personas()
-insertar()
