@@ -5,7 +5,8 @@ def eliminarProducto():
 
      cursor = conexion.cursor()
      
-     producto=input("ingrese el nombre del producto a eliminar")
+     producto=input("ingrese el nombre del producto a eliminar ").strip()
+     
      
      cursor.execute("DELETE FROM Productos WHERE nombre=?",(producto,))
      
